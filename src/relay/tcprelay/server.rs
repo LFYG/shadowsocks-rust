@@ -95,9 +95,9 @@ impl TcpRelayClientPending {
                             let v = ip_addr.iter()
                                            .filter(|ipaddr| if forbidden_ip.contains(ipaddr) {
                                                        info!("{} has been forbidden", ipaddr);
-                                                       true
-                                                   } else {
                                                        false
+                                                   } else {
+                                                       true
                                                    })
                                            .map(|ip| match *ip {
                                                     IpAddr::V4(v4) => SocketAddr::V4(SocketAddrV4::new(v4, port)),
